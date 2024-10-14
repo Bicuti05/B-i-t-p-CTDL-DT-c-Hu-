@@ -71,6 +71,7 @@ int main(void) {
 	return 0;
 }
 Bai 2 :
+
 #include<iostream>
 using namespace std;
 int Nil(int a) {
@@ -121,7 +122,7 @@ void checkBlum(int arr[], int l, int b) {
 			if (sum < b) {
 				if (Nil(arr[i]) == 0 && Nil(arr[j]) == 0) {
 					if (Nil(sum) == 0) {
-						cout << "[" << i << ", " << j << "] ";
+						cout << "(" << arr[i] << ", " << arr[j] << ") ";
 						count += 1;
 					}
 				}
@@ -132,15 +133,38 @@ void checkBlum(int arr[], int l, int b) {
 		cout << "Khong co cap so thoa man";
 	}
 }
-int main(void) {
-	int N;
-	cin >> N;
-	int n;
-	cin >> n;
-	int mang[n];
-	for (int k = 0; k < n; k++) {
-		cin >> mang[k];
+
+int main() {
+	int N, M;
+	cin >> N >> M;
+	int mang[1000];
+	int bien = 0;
+	cout << "Day cac so Blum nho hon " << N << " la: " << endl;
+	for (int k = 6; k < N; k++) {
+		if (Nil(k) == 0) {
+			mang[bien] = k;
+			bien += 1;
+		}
 	}
-	checkBlum(mang, n, N);
+	for (int k = 0; k < bien; k++) {
+		cout << mang[k] << " ";
+	}
+	cout << "\nCac cap so Blum co tong la 1 so Blum nho hon " << N << " la: " << endl;
+	checkBlum(mang, bien, N);
+	int j;
+	if (Nil(M) == 0) {
+		for (j = 0; j < bien; j++) {
+			if (mang[j] == M) {
+				cout << "\nSo Blum M co ton tai trong day" << endl;
+				break;
+			}
+		}
+		if (j == bien) {
+			cout << "\nKhong ton tai so Blum M trong day" << endl;
+		}
+	}
+	else {
+		cout << "\nSo M nhap vao khong phai 1 so Blum";
+	}
 	return 0;
 }
