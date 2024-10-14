@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //-------------------BTVN so 1-------------------
 Khai bao mang so nguyen 2 chieu kich thuoc R va C:
 
@@ -76,7 +77,7 @@ Bai 2 :
 using namespace std;
 int Nil(int a) {
 	int re = 0;
-	if (a < 6) {
+	if (a < 4) {
 		re = -1;
 	}
 	else {
@@ -99,14 +100,7 @@ int Nil(int a) {
 			m += 1;
 		}
 		if (m == 2) {
-			for (int i = 0; i < m; i++) {
-				if (ar[0] != ar[1]) {
-					re = 0;
-				}
-				else {
-					re = -1;
-				}
-			}
+			re = 0;
 		}
 		else {
 			re = -2;
@@ -140,7 +134,7 @@ int main() {
 	int mang[1000];
 	int bien = 0;
 	cout << "Day cac so Blum nho hon " << N << " la: " << endl;
-	for (int k = 6; k < N; k++) {
+	for (int k = 4; k < N; k++) {
 		if (Nil(k) == 0) {
 			mang[bien] = k;
 			bien += 1;
